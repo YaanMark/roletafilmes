@@ -1,87 +1,118 @@
 body {
-  font-family: Arial, sans-serif;
-  text-align: center;
-  background: #222;
-  color: #fff;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background: #222;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 .container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+    padding: 10px;
+}
+
+h1 {
+    font-size: 1.8em;
+    margin-bottom: 20px;
 }
 
 canvas {
-  border: 5px solid #fff;
-  border-radius: 50%;
-  margin-bottom: 20px;
+    border: 5px solid #fff;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    max-width: 90%;
+    height: auto;
+}
+
+.botoes-roleta {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 80%;
+    max-width: 300px;
+    margin-bottom: 20px;
 }
 
 button {
-  padding: 10px 20px;
-  font-size: 18px;
-  cursor: pointer;
-  background: #ff4757;
-  color: #fff;
-  border: none;
-  border-radius: 10px;
-  transition: 0.3s;
+    padding: 12px 25px;
+    font-size: 1.1em;
+    cursor: pointer;
+    background: #ff4757;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    transition: 0.3s;
+    width: 100%;
 }
 
 button:hover {
-  background: #e84118;
+    background: #e84118;
 }
 
 #resultado {
-  margin-top: 20px;
-  font-size: 24px;
-  font-weight: bold;
+    margin-top: 20px;
+    font-size: 1.5em;
+    font-weight: bold;
+    padding: 0 10px;
 }
 
 .pointer {
-  position: absolute;
-  top: 95px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 0;
-  height: 0;
-  border-left: 15px solid transparent;
-  border-right: 15px solid transparent;
-  border-top: 25px solid #e84118;
-  z-index: 10;
+    position: absolute;
+    top: calc(50% - 200px + 10px);
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-top: 25px solid #e84118;
+    z-index: 10;
+}
+
+@media (max-width: 450px) {
+    .pointer {
+        top: calc(50% - (90vw / 2) + 10px);
+    }
 }
 
 footer {
-  margin-top: 40px;
-  font-size: 0.9em;
-  color: #aaa;
-  padding: 15px;
+    margin-top: 30px;
+    font-size: 0.8em;
+    color: #aaa;
+    padding: 15px;
 }
 
 .modal {
-    display: none; 
-    position: fixed; 
+    display: none;
+    position: fixed;
     z-index: 1;
     left: 0;
     top: 0;
-    width: 100%; 
-    height: 100%; 
+    width: 100%;
+    height: 100%;
     overflow: auto;
     background-color: rgba(0, 0, 0, 0.7);
-    padding-top: 60px;
+    padding-top: 20px;
+    box-sizing: border-box;
+    z-index: 11;
 }
 
 .modal-content {
     background-color: #333;
-    margin: 5% auto; 
-    padding: 30px;
+    margin: 5% auto;
+    padding: 20px;
     border: 1px solid #888;
-    width: 80%;
-    max-width: 600px;
+    width: 90%;
+    max-width: 500px;
     border-radius: 10px;
     position: relative;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    box-sizing: border-box;
 }
 
 .close-button {
@@ -101,10 +132,12 @@ footer {
 .modal h2 {
     margin-top: 0;
     color: #ff4757;
+    font-size: 1.5em;
 }
 
 .adicionar-filme {
     display: flex;
+    flex-direction: column;
     gap: 10px;
     margin-bottom: 20px;
 }
@@ -116,13 +149,15 @@ footer {
     border: 1px solid #555;
     background-color: #444;
     color: #fff;
-    font-size: 16px;
+    font-size: 1em;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 #listaFilmesModal {
     list-style: none;
     padding: 0;
-    max-height: 300px;
+    max-height: 250px;
     overflow-y: auto;
     border: 1px solid #555;
     border-radius: 5px;
@@ -131,8 +166,8 @@ footer {
 
 #listaFilmesModal li {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    flex-direction: column;
+    align-items: flex-start;
     padding: 10px;
     border-bottom: 1px solid #555;
     color: #fff;
@@ -145,17 +180,24 @@ footer {
 #listaFilmesModal li span {
     flex-grow: 1;
     text-align: left;
+    margin-bottom: 10px;
+    word-break: break-word;
+    width: 100%;
 }
 
 #listaFilmesModal li .botoes-acao {
     display: flex;
     gap: 10px;
+    width: 100%;
+    justify-content: flex-start;
 }
 
 #listaFilmesModal li .botoes-acao button {
-    padding: 5px 10px;
-    font-size: 14px;
+    padding: 8px 15px;
+    font-size: 0.9em;
     border-radius: 5px;
+    flex-grow: 1;
+    width: auto;
 }
 
 #listaFilmesModal li .botoes-acao .btn-editar {
@@ -175,11 +217,85 @@ footer {
 }
 
 #listaFilmesModal li.editing input {
-    width: calc(100% - 120px);
+    width: 100%;
     padding: 8px;
     border-radius: 5px;
     border: 1px solid #555;
     background-color: #555;
     color: #fff;
-    font-size: 16px;
+    font-size: 1em;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+}
+
+@media (min-width: 768px) {
+    .container {
+        margin-top: 30px;
+    }
+
+    h1 {
+        font-size: 2.5em;
+    }
+
+    canvas {
+        max-width: 400px;
+    }
+
+    .botoes-roleta {
+        flex-direction: row;
+        width: auto;
+        max-width: none;
+    }
+
+    button {
+        padding: 10px 20px;
+        font-size: 18px;
+        width: auto;
+    }
+
+    #resultado {
+        font-size: 24px;
+    }
+
+    .pointer {
+        top: 125px; /* Ajuste para descer o pointer em telas grandes*/
+    }
+
+    .modal-content {
+        padding: 30px;
+        width: 80%;
+        max-width: 600px;
+    }
+
+    .adicionar-filme {
+        flex-direction: row;
+    }
+
+    .adicionar-filme input[type="text"] {
+        width: auto;
+    }
+
+    #listaFilmesModal li {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    #listaFilmesModal li span {
+        margin-bottom: 0;
+    }
+
+    #listaFilmesModal li .botoes-acao {
+        width: auto;
+        justify-content: flex-end;
+    }
+
+    #listaFilmesModal li .botoes-acao button {
+        flex-grow: 0;
+        width: auto;
+    }
+
+    #listaFilmesModal li.editing input {
+        width: calc(100% - 120px);
+        margin-bottom: 0;
+    }
 }
