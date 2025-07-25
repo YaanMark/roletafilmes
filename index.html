@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roleta de Filmes</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Qual o filme de hoje, porra!</h1>
+        <div class="pointer"></div>
+        <canvas id="roleta" width="400" height="400"></canvas>
+        <div class="botoes-roleta"> <button id="girar">Girar!</button>
+            <button id="btnFilmes">Filmes</button> </div>
+        <div id="resultado"></div>
+    </div>
+
+    <div id="modalFilmes" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>Gerenciar Filmes</h2>
+            <div class="adicionar-filme">
+                <input type="text" id="inputNovoFilme" placeholder="Nome do novo filme">
+                <button id="btnAddFilme">Adicionar Filme</button>
+            </div>
+            <ul id="listaFilmesModal">
+                </ul>
+        </div>
+    </div>
+
+    <footer>
+        <p>Obrigado por não me fazer escolher o filme!</p>
+    </footer>
+
+    <script type="module" src="script.js"></script>
+</body>
+
+</html>

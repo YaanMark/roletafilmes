@@ -1,0 +1,185 @@
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  background: #222;
+  color: #fff;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 30px;
+}
+
+canvas {
+  border: 5px solid #fff;
+  border-radius: 50%;
+  margin-bottom: 20px;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 18px;
+  cursor: pointer;
+  background: #ff4757;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  transition: 0.3s;
+}
+
+button:hover {
+  background: #e84118;
+}
+
+#resultado {
+  margin-top: 20px;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.pointer {
+  position: absolute;
+  top: 95px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-top: 25px solid #e84118;
+  z-index: 10;
+}
+
+footer {
+  margin-top: 40px;
+  font-size: 0.9em;
+  color: #aaa;
+  padding: 15px;
+}
+
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding-top: 60px;
+}
+
+.modal-content {
+    background-color: #333;
+    margin: 5% auto; 
+    padding: 30px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 600px;
+    border-radius: 10px;
+    position: relative;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+.close-button {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: #fff;
+    text-decoration: none;
+}
+
+.modal h2 {
+    margin-top: 0;
+    color: #ff4757;
+}
+
+.adicionar-filme {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.adicionar-filme input[type="text"] {
+    flex-grow: 1;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #555;
+    background-color: #444;
+    color: #fff;
+    font-size: 16px;
+}
+
+#listaFilmesModal {
+    list-style: none;
+    padding: 0;
+    max-height: 300px;
+    overflow-y: auto;
+    border: 1px solid #555;
+    border-radius: 5px;
+    background-color: #444;
+}
+
+#listaFilmesModal li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #555;
+    color: #fff;
+}
+
+#listaFilmesModal li:last-child {
+    border-bottom: none;
+}
+
+#listaFilmesModal li span {
+    flex-grow: 1;
+    text-align: left;
+}
+
+#listaFilmesModal li .botoes-acao {
+    display: flex;
+    gap: 10px;
+}
+
+#listaFilmesModal li .botoes-acao button {
+    padding: 5px 10px;
+    font-size: 14px;
+    border-radius: 5px;
+}
+
+#listaFilmesModal li .botoes-acao .btn-editar {
+    background-color: #3498db;
+}
+
+#listaFilmesModal li .botoes-acao .btn-editar:hover {
+    background-color: #2980b9;
+}
+
+#listaFilmesModal li .botoes-acao .btn-excluir {
+    background-color: #e74c3c;
+}
+
+#listaFilmesModal li .botoes-acao .btn-excluir:hover {
+    background-color: #c0392b;
+}
+
+#listaFilmesModal li.editing input {
+    width: calc(100% - 120px);
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #555;
+    background-color: #555;
+    color: #fff;
+    font-size: 16px;
+}
