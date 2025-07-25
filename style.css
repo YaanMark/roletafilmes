@@ -61,9 +61,14 @@ button:hover {
     padding: 0 10px;
 }
 
+.roleta-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
 .pointer {
     position: absolute;
-    top: calc(50% - 200px + 10px);
+    top: -5px;
     left: 50%;
     transform: translateX(-50%);
     width: 0;
@@ -76,9 +81,13 @@ button:hover {
 
 @media (max-width: 450px) {
     .pointer {
-        top: calc(50% - (90vw / 2) + 10px);
+        border-left: 10px solid transparent;
+        border-right: 10px solid transparent;
+        border-top: 18px solid #e84118;
+        top: -18px;
     }
 }
+
 
 footer {
     margin-top: 30px;
@@ -255,10 +264,6 @@ footer {
 
     #resultado {
         font-size: 24px;
-    }
-
-    .pointer {
-        top: 125px; /* Ajuste para descer o pointer em telas grandes*/
     }
 
     .modal-content {
